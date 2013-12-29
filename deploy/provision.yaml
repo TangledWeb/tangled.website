@@ -1,0 +1,53 @@
+---
+- hosts: webservers
+  sudo: yes
+  tasks:
+    - name: Upgrade
+      apt: update_cache=yes cache_valid_time=6000 upgrade=safe
+
+    - apt: pkg=build-essential state=latest
+    - apt: pkg=debconf state=latest
+    - apt: pkg=libbz2-dev state=latest
+    - apt: pkg=libssl-dev state=latest
+    - apt: pkg=python-pycurl state=latest
+    - apt: pkg=zlib1g-dev state=latest
+
+    - name: Set time zone
+      shell: echo "America/Los_Angeles" > /etc/timezone
+    - name: Reconfigure tzdata
+      command: dpkg-reconfigure -f noninteractive tzdata
+
+    - name: Add deploy user
+      user: name=deploy
+
+    - name: Add Nginx APT key
+      apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
+    - name: Add Nginx APT repo
+      apt_repository: repo="deb http://nginx.org/packages/debian/ wheezy nginx" state=present
+    - name: Install Nginx
+      apt: pkg=nginx state=latest
+    - name: Start Nginx
+      service: name=nginx state=started
+
+    - name: Download Python
+      get_url: url=http://www.python.org/ftp/python/3.3.3/Python-3.3.3.tar.xz dest=/usr/local/src
+    - name: Extract Python
+      command: tar -xf /usr/local/src/Python-3.3.3.tar.xz --directory /usr/local/src
+    - name: Install Python
+      shell: cd /usr/local/src/Python-3.3.3 && ./configure --prefix /usr/local && make && make install
+
+    - name: Download setuptools
+      get_url: url=https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py dest=/usr/local/src
+    - name: Install setuptools
+      command: /usr/local/bin/python3.3 /usr/local/src/ez_setup.py
+
+    - name: Download pip
+      get_url: url=https://raw.github.com/pypa/pip/master/contrib/get-pip.py dest=/usr/local/src
+    - name: Install pip
+      command: /usr/local/bin/python3.3 /usr/local/src/get-pip.py
+
+    - name: Install uwsgi
+      pip: executable=/usr/local/bin/pip-3.3 name=uwsgi
+
+    - name: Install buildout
+      pip: executable=/usr/local/bin/pip-3.3 name=zc.buildout
