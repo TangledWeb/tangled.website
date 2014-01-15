@@ -9,6 +9,8 @@
     - apt: pkg=debconf state=latest
     - apt: pkg=libbz2-dev state=latest
     - apt: pkg=libssl-dev state=latest
+    - apt: pkg=libffi-dev state=latest
+    - apt: pkg=libsqlite3-dev state=latest
     - apt: pkg=python-pycurl state=latest
     - apt: pkg=zlib1g-dev state=latest
 
