@@ -1,7 +1,9 @@
 from tangled.web import Resource, represent
 
+from tangled.site.resources.entry import Entry
 
-class Docs(Resource):
+
+class Docs(Entry):
 
     @represent('text/html', template_name='tangled.website:templates/docs.mako')
     def GET(self):
@@ -13,7 +15,7 @@ class Docs(Resource):
                     'href': '/'.join(prefix),
                     'text': prefix[1],
                 })
-        links = sorted(links, key=lambda i: i['text'])
-        return {
-            'links': links,
-        }
+        self.urlvars['id'] = 'docs'
+        data = super().GET()
+        data['links'] = sorted(links, key=lambda i: i['text'])
+        return data
