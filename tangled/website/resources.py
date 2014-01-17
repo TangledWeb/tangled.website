@@ -5,7 +5,7 @@ from tangled.site.resources.entry import Entry
 
 class Docs(Entry):
 
-    @config('text/html', template_name='tangled.website:templates/docs.mako')
+    @config('text/html', template='tangled.website:templates/docs.mako')
     def GET(self):
         static_dirs = self.app.get_all('static_directory', as_dict=True)
         links = []
