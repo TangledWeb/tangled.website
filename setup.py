@@ -11,7 +11,6 @@ setup(
         'tangled.auth>=0.1.dev0',
         'tangled.session>=0.1.dev0',
         'tangled.site>=0.1.dev0',
-        'PyCrypto>=2.6.1',
         'SQLAlchemy>=0.9.1',
     ),
     extras_require={
