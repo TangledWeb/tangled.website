@@ -12,7 +12,7 @@ class Docs(Entry):
         for prefix, dir_app in static_dirs.items():
             if prefix[0] == 'docs':
                 links.append({
-                    'href': '/'.join(prefix),
+                    'href': '/'.join(prefix) + '/',
                     'text': prefix[1],
                 })
         self.urlvars['id'] = 'docs'
