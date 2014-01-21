@@ -2,12 +2,9 @@ import os
 import posixpath
 
 from tangled.util import abs_path
-from tangled.web import Application
 
 
-def make_app(settings):
-    app = Application(settings)
-
+def include(app):
     repos = {}
     src_dir = abs_path(app.settings['src_dir'])
     for name in os.listdir(src_dir):
@@ -24,5 +21,3 @@ def make_app(settings):
 
     app.mount_resource('docs', '.resources:Docs', '/docs')
     app.scan('.resources')
-
-    return app
