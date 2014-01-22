@@ -1,6 +1,24 @@
-from tangled.web import Resource, config
+import os
+import posixpath
 
+from tangled.util import abs_path
+from tangled.web import Resource, config, subscriber
 from tangled.site.resources.entry import Entry
+
+
+@subscriber('tangled.web.events:ApplicationCreated')
+def on_application_created(event):
+    app = event.app
+    remote = app.settings.get('env') == 'production'
+    src_dir = abs_path(app.settings['src_dir'])
+    for name in os.listdir(src_dir):
+        if name.startswith('tangled'):
+            repo_dir = os.path.join(src_dir, name)
+            docs_dir = os.path.join(repo_dir, 'docs/_build')
+            if os.path.exists(docs_dir):
+                prefix = posixpath.join('docs', name)
+                app.mount_static_directory(
+                    prefix, docs_dir, remote=remote, index_page='index.html')
 
 
 class Docs(Entry):
