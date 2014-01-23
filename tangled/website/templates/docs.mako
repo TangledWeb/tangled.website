@@ -1,4 +1,4 @@
-<%inherit file="/entry.mako" />
+<%inherit file="/entry/entry.mako" />
 
 <%block name="page_title">Documentation</%block>
 
