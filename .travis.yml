@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.3"
+install:
+  - pip install zc.buildout
+  - git clone git://github.com/TangledWeb/tangled ../tangled
+  - git clone git://github.com/TangledWeb/tangled.auth ../tangled.auth
+  - git clone git://github.com/TangledWeb/tangled.mako ../tangled.mako
+  - git clone git://github.com/TangledWeb/tangled.session ../tangled.session
+  - git clone git://github.com/TangledWeb/tangled.site ../tangled.site
+  - git clone git://github.com/TangledWeb/tangled.sqlalchemy ../tangled.sqlalchemy
+  - git clone git://github.com/TangledWeb/tangled.web ../tangled.web
+  - buildout
+script:
+  - ./bin/tangled test --no-coverage
