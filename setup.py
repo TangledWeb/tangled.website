@@ -5,7 +5,10 @@ setup(
     name='tangled.website',
     version='0.1.dev0',
     description='tangledframework.com',
-    long_description='Website for Tangled Web Framework',
+    long_description=open('README.rst').read(),
+    url='http://tangledframework.org/',
+    author='Wyatt Baldwin',
+    author_email='self@wyattbaldwin.com',
     packages=find_packages(),
     install_requires=(
         'tangled.auth>=0.1.dev0',
