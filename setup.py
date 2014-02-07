@@ -13,6 +13,7 @@ setup(
         'tangled',
         'tangled.website',
     ],
+    include_package_data=True,
     install_requires=[
         'tangled.auth>=0.1.dev0',
         'tangled.session>=0.1.dev0',
