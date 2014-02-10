@@ -18,7 +18,7 @@ setup(
         'tangled.auth>=0.1.dev0',
         'tangled.session>=0.1.dev0',
         'tangled.site>=0.1.dev0',
-        'SQLAlchemy>=0.9.1',
+        'SQLAlchemy>=0.9.2',
     ],
     extras_require={
         'dev': ['coverage'],
