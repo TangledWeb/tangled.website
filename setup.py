@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name='tangled.website',
     version='0.1.dev0',
-    description='tangledframework.com',
+    description='tangledframework.org',
     long_description=open('README.rst').read(),
     url='http://tangledframework.org/',
     author='Wyatt Baldwin',
