@@ -15,9 +15,9 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        'tangled.auth>=0.1.dev0',
-        'tangled.session>=0.1.dev0',
-        'tangled.site>=0.1.dev0',
+        'tangled.auth>=0.1a3',
+        'tangled.session>=0.1a2',
+        'tangled.site>=0.1a2',
         'SQLAlchemy>=0.9.2',
     ],
     extras_require={
