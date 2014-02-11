@@ -7,7 +7,7 @@ setup(
     description='tangledframework.org',
     long_description=open('README.rst').read(),
     url='http://tangledframework.org/',
-    download_url='https://github.com/TangledWeb/tangled.website',
+    download_url='https://github.com/TangledWeb/tangled.website/tags',
     author='Wyatt Baldwin',
     author_email='self@wyattbaldwin.com',
     packages=[
