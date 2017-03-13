@@ -16,6 +16,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
+        'pg8000>=1.10.6',
         'tangled.auth>=0.1a3',
         'tangled.session>=0.1a2',
         'tangled.site>=0.1a2',
