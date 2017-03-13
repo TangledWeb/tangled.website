@@ -2,7 +2,7 @@ import os
 import posixpath
 
 from tangled.util import abs_path
-from tangled.web import Resource, config, subscriber
+from tangled.web import config, subscriber
 from tangled.site.resources.entry import Entry
 
 
