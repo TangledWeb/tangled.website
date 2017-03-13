@@ -18,8 +18,8 @@ setup(
     install_requires=[
         'pg8000>=1.10.6',
         'tangled.auth>=0.1a3',
-        'tangled.session>=0.1a2',
-        'tangled.site>=0.1a2',
+        'tangled.session>=0.1a3',
+        'tangled.site>=0.1a4',
         'SQLAlchemy>=1.1.6',
     ],
     extras_require={
