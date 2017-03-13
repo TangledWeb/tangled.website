@@ -1,3 +1,2 @@
-include buildout.cfg
 include *.ini
 recursive-include tangled/website/templates *.mako
