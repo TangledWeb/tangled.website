@@ -23,7 +23,10 @@ setup(
         'SQLAlchemy>=1.1.6',
     ],
     extras_require={
-        'dev': ['coverage'],
+        'dev': [
+            'coverage',
+            'runcommands',
+        ],
     },
     classifiers=[
         'Development Status :: 3 - Alpha',
