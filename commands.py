@@ -1,8 +1,7 @@
 from runcommands import command
 from runcommands.commands import local, remote, show_config  # noqa
 
-from arctasks.aws.deploy import *
-from arctasks.aws.deploy import push_nginx_config
+from arctasks.aws import *
 
 
 @command
