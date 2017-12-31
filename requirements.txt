@@ -1,8 +1,6 @@
--e ../tangled
--e ../tangled.auth
+-e ../tangled[dev]
 -e ../tangled.mako
--e ../tangled.session
--e ../tangled.site
 -e ../tangled.sqlalchemy
 -e ../tangled.web
--e .[dev]
+-e ../tangled.site
+-e .
