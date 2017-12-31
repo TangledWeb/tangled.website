@@ -19,7 +19,7 @@ setup(
         'pg8000>=1.10.6',
         'tangled.auth>=0.1a3',
         'tangled.session>=0.1a3',
-        'tangled.site>=0.1a5',
+        'tangled.site>=1.0a5',
         'SQLAlchemy>=1.1.6',
     ],
     classifiers=[
