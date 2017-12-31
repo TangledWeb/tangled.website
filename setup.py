@@ -19,7 +19,7 @@ setup(
         'tangled.auth>=0.1a3',
         'tangled.session>=0.1a3',
         'tangled.site>=1.0a5',
-        'SQLAlchemy>=1.1.6',
+        'SQLAlchemy>=1.2.0',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
