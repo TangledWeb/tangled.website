@@ -3,10 +3,10 @@ from setuptools import setup
 
 setup(
     name='tangled.website',
-    version='0.1.dev0',
+    version='1.0a1.dev0',
     description='tangledframework.org',
     long_description=open('README.rst').read(),
-    url='http://tangledframework.org/',
+    url='https://tangledframework.org/',
     download_url='https://github.com/TangledWeb/tangled.website/tags',
     author='Wyatt Baldwin',
     author_email='self@wyattbaldwin.com',
